@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>個人學習檔案 | 夏禾軒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Noto Sans TC', sans-serif;
+            background: linear-gradient(145deg, #f4f9ff 0%, #e9f0fa 100%);
+            color: #1e2a3e;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* header 區 */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: #ffd966;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2a5298;
+            border: 4px solid white;
+            box-shadow: 0 8px 14px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 導覽列 */
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            background: white;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e2edf7;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(4px);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #1e3c72;
+            color: white;
+        }
+
+        /* 內容區塊 */
+        .content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-left: 6px solid #f4a261;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #1f3a5f;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #fefefe;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.2rem 1.5rem;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eef3fc;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #2a5298;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eef2fa;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.7rem;
+            color: #1e3c72;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        th, td {
+            padding: 12px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2edf7;
+        }
+
+        th {
+            background-color: #eef3fc;
+            color: #1e3c72;
+            font-weight: 700;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            background: #f4f9ff;
+            color: #2a5298;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #cbdde9;
+        }
+
+        footer {
+            background: #eef3fc;
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 0.85rem;
+            color: #3a5a7a;
+            border-top: 1px solid #dce7f0;
+        }
+
+        @media (max-width: 640px) {
+            .content {
+                padding: 1rem;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="avatar">📘</div>
+        <h1>夏禾軒 · 學習歷程檔案</h1>
+        <p class="tagline">探索 | 實作 | 成長 — 我的高中學習足跡</p>
+    </div>
+
+    <div class="nav-links">
+        <a href="#about">📌 關於我</a>
+        <a href="#courses">📖 學習內容</a>
+        <a href="#works">✨ 作品集</a>
+        <a href="#competition">🏆 競賽經歷</a>
+        <a href="#club">🤝 社團參與</a>
+        <a href="#selflearn">🚀 自主學習</a>
+    </div>
+
+    <div class="content">
+        <!-- 關於我 -->
+        <section id="about">
+            <h2 class="section-title">📌 關於我</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🙋 自我介紹</h3>
+                    <p>我是夏禾軒，就讀高中二年級。熱愛程式設計、數學邏輯與創意實作。相信透過自主學習與專案累積，能讓自己更靠近理想中的工程師。</p>
+                    <div class="badge">#成長型思維</div>
+                    <div class="badge">#跨領域學習</div>
+                </div>
+                <div class="card">
+                    <h3>🎯 未來目標</h3>
+                    <p>資工/資管相關學系 · 成為全端開發者 · 用科技解決生活問題</p>
+                    <div class="badge">✅ 持續累積作品</div>
+                </div>
+                <div class="card">
+                    <h3>📚 喜愛科目</h3>
+                    <p>資訊科技、數學、物理、英文</p>
+                    <div class="badge">⭐ 學科探究</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 學習內容 -->
+        <section id="courses">
+            <h2 class="section-title">📖 高中學習內容</h2>
+            <table>
+                <thead>
+                <tr><th>領域</th><th>重點單元 / 課程</th><th>收穫與表現</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>資訊科技</td><td>Python 資料結構、HTML/CSS、基礎JavaScript</td><td>期末專題「校園問答機器人」獲佳作</td></tr>
+                    <tr><td>數學</td><td>三角函數、機率統計、向量</td><td>校內數學競賽前20%</td></tr>
+                    <tr><td>自然科學</td><td>程式模擬物理運動、探究實作</td><td>利用Excel及Python分析實驗數據</td></tr>
+                    <tr><td>語文領域</td><td>英文簡報、科技英文閱讀</td><td>通過多益測驗(B1等級)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 作品集 -->
+        <section id="works">
+            <h2 class="section-title">✨ 作品集</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📱 個人學習檔案網站</h3>
+                    <p>使用HTML/CSS設計響應式網頁，整合學習歷程，並上架GitHub Pages。</p>
+                    <a href="#" class="btn-outline">🔗 線上觀看</a>
+                </div>
+                <div class="card">
+                    <h3>🐍 天氣查詢小工具</h3>
+                    <p>Python + 公開API，輸入城市名稱即時顯示天氣與建議。</p>
+                    <div class="badge">API串接</div>
+                </div>
+                <div class="card">
+                    <h3>📊 校園碳足跡計算機</h3>
+                    <p>結合試算表及Google Apps Script，協助班級記錄用電碳排量。</p>
+                    <div class="badge">團隊協作</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 競賽經歷 -->
+        <section id="competition">
+            <h2 class="section-title">🏆 競賽經歷</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🥈 資訊學科能力競賽</h3>
+                    <p>校內賽 第二名，晉級區域賽。題目涵蓋演算法、模擬與資料處理。</p>
+                </div>
+                <div class="card">
+                    <h3>💡 全國高中小論文競賽</h3>
+                    <p>以「AI輔助語言學習」為主題，獲得甲等，結合問卷與實測分析。</p>
+                </div>
+                <div class="card">
+                    <h3>🤖 創意程式設計黑客松</h3>
+                    <p>48小時開發「情緒手環視覺化介面」，獲得最佳設計獎。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 社團參與 -->
+        <section id="club">
+            <h2 class="section-title">🤝 社團參與</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>💻 資訊研究社 — 教學長</h3>
+                    <p>帶領社員學習Python基礎、HTML入門，規劃期末成果發表。</p>
+                    <div class="badge">領導力</div>
+                </div>
+                <div class="card">
+                    <h3>🗣️ 英語辯論社</h3>
+                    <p>練習英語邏輯表達，參與校際模擬聯合國會議，訓練臨場反應。</p>
+                </div>
+                <div class="card">
+                    <h3>⚙️ 科學服務團</h3>
+                    <p>至偏鄉國小進行科普教學，設計簡單程式遊戲與科學實驗。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自主學習專區 -->
+        <section id="selflearn">
+            <h2 class="section-title">🚀 自主學習</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🌐 線上課程</h3>
+                    <p>✅ 哈佛CS50’s 程式設計入門<br>✅ Google 基礎IT支援證書 (進行中)<br>✅ 響應式網頁設計（freeCodeCamp）</p>
+                </div>
+                <div class="card">
+                    <h3>📂 自主學習計畫</h3>
+                    <p>主題：「從零開始打造個人部落格」<br>利用GitHub Pages + Markdown記錄學習筆記，目前已撰寫10篇技術文章。</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 課外技能樹</h3>
+                    <p>Git版本控制、Figma基礎UI設計、簡報溝通術、AI工具應用(ChatGPT/Copilot)。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 總結: 學習表格(歷程摘要) -->
+        <section>
+            <h2 class="section-title">📈 學習成果摘要</h2>
+            <table>
+                <thead><tr><th>類別</th><th>數量/等級</th><th>代表性成果</th></tr></thead>
+                <tbody>
+                    <tr><td>程式專案</td><td>8+ 個</td><td>個人網站、天氣工具、遊戲小作品</td></tr>
+                    <tr><td>競賽獎項</td><td>校內外5項</td><td>資訊能力競賽、小論文甲等</td></tr>
+                    <tr><td>社團幹部</td><td>2 個社團</td><td>資訊社教學長、科學服務團團員</td></tr>
+                    <tr><td>證照/檢定</td><td>多益B1 /  Python 3 認證</td><td>持續精進</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        🌟 夏禾軒 個人學習檔案 | 使用 HTML / CSS 編寫，透過 AI 協作完成 | 發布於 GitHub Pages<br>
+        最後更新：2025年 ｜ 持續累積，邁向未來
+    </footer>
+</div>
+</body>
+</html>
