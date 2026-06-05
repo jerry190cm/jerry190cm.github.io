@@ -2,119 +2,332 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>夏禾軒 · 完整學習歷程（含真實圖片）</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夏禾軒 · 深色系學習歷程檔案</title>
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f4f7fc;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            background: #0a0c10;
+            font-family: 'Segoe UI', 'Poppins', 'Noto Sans TC', system-ui, sans-serif;
+            padding: 2rem 1rem;
+            color: #eef2ff;
+        }
+
         .container {
-            max-width: 1100px;
-            margin: auto;
-            background: white;
-            border-radius: 28px;
-            padding: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f1217;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6);
+            border: 1px solid #2a2e3a;
         }
-        h1, h2 {
-            color: #1e2f5e;
-        }
-        .gallery {
+
+        /* 深色導航 */
+        .navbar {
+            background: #07090e;
+            padding: 1rem 2rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            margin: 20px 0;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #232734;
+            gap: 1rem;
         }
-        .card-img {
-            background: #f9f9f9;
-            border-radius: 20px;
-            width: 280px;
-            padding: 12px;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #facc15, #ffb347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .nav-links a {
+            color: #b9c3d4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #facc15;
+        }
+
+        /* hero 深色區塊 */
+        .hero {
+            background: linear-gradient(145deg, #0c0f16, #080b10);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            border-bottom: 1px solid #222837;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            color: white;
+        }
+
+        .hero .highlight {
+            color: #facc15;
+        }
+
+        .hero-stats {
+            background: #131823;
+            padding: 1rem 1.8rem;
+            border-radius: 2rem;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #2d3442;
         }
-        .card-img img {
-            width: 100%;
-            border-radius: 16px;
-            height: auto;
+
+        .score-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #facc15;
         }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1rem 0;
+        }
+
+        .badge-dark {
+            background: #1e2432;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #facc15;
+            border: 1px solid #3a4052;
+        }
+
+        /* section 深色卡片 */
+        .section {
+            padding: 2rem 2rem 1.5rem;
+            border-bottom: 1px solid #1a1f2a;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-left: 6px solid #facc15;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: #f5f9ff;
+        }
+
+        .grid-2, .grid-3 {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .card-dark {
+            background: #10141c;
+            border-radius: 1.2rem;
+            padding: 1.3rem;
+            border: 1px solid #262d3a;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.5);
+            border-color: #facc1544;
+        }
+
+        .card-dark h3 {
+            color: #facc15;
+            margin-bottom: 0.6rem;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            background: #0f1217;
+            border-radius: 1rem;
+            overflow: hidden;
         }
+
         th, td {
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px 10px;
             text-align: left;
+            border-bottom: 1px solid #262d3a;
+        }
+
+        th {
+            background: #181e28;
+            color: #facc15;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #07090e;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #7b86a3;
+            border-top: 1px solid #1e2532;
+        }
+
+        hr {
+            border-color: #262d3a;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>📘 夏禾軒 · 完整學習歷程檔案</h1>
-    <p><strong>薇閣高中 11年級</strong> | 數學 · 經濟 · 資訊 | SAT 1500 · AMC12 138分</p>
-
-    <h2>🏆 競賽與榮譽</h2>
-    <ul>
-        <li>✅ AMC12 Honor Roll of Distinction（138分，前1%）</li>
-        <li>✅ CTCA 西洋棋 U15 亞軍（獎金9000NTD）</li>
-        <li>✅ ARML 個人銅牌（數學團隊賽）</li>
-        <li>✅ NEC 經濟挑戰賽 晉級區域賽</li>
-        <li>✅ 台北市西洋棋校際團體賽 冠軍（第一台主將）</li>
-        <li>✅ 沖繩 SDG 青年影響力大使（AI智慧垃圾桶專案）</li>
-    </ul>
-
-    <h2>📸 你給的真實圖片（已對應主題）</h2>
-    <div class="gallery">
-        <div class="card-img">
-            <img src="20240728_101252.jpg" alt="CTCA西洋棋頒獎">
-            <p>♟️ CTCA 西洋棋 U15 亞軍</p>
-        </div>
-        <div class="card-img">
-            <img src="20241028_191037.jpg" alt="沖繩SDG青年大使證書">
-            <p>🇯🇵 沖繩 SDG 青年大使證書</p>
-        </div>
-        <div class="card-img">
-            <img src="20241029_002200.jpg" alt="機器人或團隊活動">
-            <p>🤖 機器人 / 團隊競賽記錄</p>
-        </div>
-        <div class="card-img">
-            <img src="20251209_103704.jpg" alt="AMC12相關成績或準備">
-            <p>📐 AMC12 成績 / 數學競賽</p>
-        </div>
-        <div class="card-img">
-            <img src="553610322_842494861549897_4216701871803357403_n.jpg" alt="個人生活或競賽照片">
-            <p>📸 額外活動記錄</p>
+    <div class="navbar">
+        <div class="logo">📘 Hsia Ho-Hsuan · DARK PORTFOLIO</div>
+        <div class="nav-links">
+            <a href="#about">關於</a>
+            <a href="#competitions">競賽</a>
+            <a href="#activities">活動</a>
+            <a href="#goal">目標</a>
         </div>
     </div>
 
-    <h2>📖 課外活動與領導力</h2>
-    <ul>
-        <li>♟️ 西洋棋社社長（學校＋自創社團）</li>
-        <li>🌱 沖繩 SDG 峰會青年大使</li>
-        <li>🤖 VEX 機器人團隊成員</li>
-        <li>📈 Econ Nerds 聯合創辦人</li>
-        <li>🏄 福隆衝浪營（2024/2025）</li>
-        <li>💻 電商公益網站 Team Leader</li>
-    </ul>
+    <div class="hero">
+        <div>
+            <h1>夏禾軒 <span class="highlight">Hsia Ho-Hsuan</span></h1>
+            <p>薇閣高中 11年級 | 數學 · 經濟 · 資訊 跨域實踐者</p>
+            <div class="badge-group">
+                <span class="badge-dark">📐 AMC12 138分 (前1%)</span>
+                <span class="badge-dark">♟️ CTCA U15 亞軍</span>
+                <span class="badge-dark">🌱 沖繩SDG青年大使</span>
+                <span class="badge-dark">🤖 VEX機器人戰隊</span>
+                <span class="badge-dark">📈 Wharton投資競賽</span>
+            </div>
+            <div class="card-dark" style="margin-top: 1rem; max-width: 400px;">
+                💡 “Want to be a tech guy that earns tons of money — 用科技創造影響力”
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div>📊 GPA (10年級)</div>
+            <div class="score-number">4.32</div>
+            <div>🎯 SAT 1500</div>
+            <div>🏅 AIME 晉級 · ARML 銅牌</div>
+        </div>
+    </div>
 
-    <h2>🎯 未來目標</h2>
-    <p>主修：數學 / 經濟 / 電腦科學。<br>
-    第一志願美國頂尖大學，若無法申請理想學校，則非常想去澳洲（環境與留學氛圍極佳）。<br>
-    最終目標：成為「賺很多錢的科技人」，同時用技術解決真實問題。</p>
+    <!-- 關於我 -->
+    <div class="section" id="about">
+        <h2 class="section-title">🧑‍💻 關於我</h2>
+        <div class="grid-2">
+            <div class="card-dark">
+                <h3>✍️ 學習信念</h3>
+                <p>熱愛數學推理、程式開發與經濟策略。擅長用邏輯解決真實問題，目標進入頂尖大學的 Math / Econ / CS 領域，成為擁有高收入且能回饋社會的科技人。</p>
+            </div>
+            <div class="card-dark">
+                <h3>🌏 留學視野</h3>
+                <p>美國為第一志願，但澳洲的陽光、自然環境與生活節奏也極具吸引力 — 學校與環境同樣重要。</p>
+                <p>🇦🇺 澳洲留學對我來說是非常迷人的選項。</p>
+            </div>
+        </div>
+    </div>
 
-    <h2>📊 成績摘要</h2>
-    <table>
-        <tr><th>項目</th><th>分數 / 表現</th></tr>
-        <tr><td>GPA (10年級)</td><td>4.32</td></tr>
-        <tr><td>SAT</td><td>1500</td></tr>
-        <tr><td>AMC12A</td><td>138分（傑出 / AIME晉級）</td></tr>
-        <tr><td>AP 規劃</td><td>微積分BC、經濟、生物、化學、物理C、APUSH、CS</td></tr>
-    </table>
+    <!-- 競賽與獎項 (完整，不含圖片格子) -->
+    <div class="section" id="competitions">
+        <h2 class="section-title">🏆 競賽與榮譽</h2>
+        <div class="grid-2">
+            <div class="card-dark"><strong>🥇 AMC12 Honor Roll of Distinction</strong><br>2025.11 — 138分 (台灣前1%)，晉級AIME。</div>
+            <div class="card-dark"><strong>♟️ CTCA 西洋棋 U15 亞軍</strong><br>2024.08 — 全球賽事，獎金9000NTD。</div>
+            <div class="card-dark"><strong>🏅 ARML 數學團隊賽 個人銅牌</strong><br>2025.04 — 個人排名前30%。</div>
+            <div class="card-dark"><strong>🌏 NEC 經濟挑戰賽 晉級區域賽</strong><br>2024.03 — 宏觀/微觀/國際事務。</div>
+            <div class="card-dark"><strong>🏆 台北市西洋棋校際團體賽 冠軍</strong><br>2025.10 — 第一台主將，全市高中對抗。</div>
+            <div class="card-dark"><strong>🇯🇵 沖繩 SDG 青年影響力大使</strong><br>2024.10 — 設計AI智慧垃圾桶，獲UN-SDGs夥伴認證。</div>
+        </div>
+    </div>
 
-    <p style="margin-top: 30px; font-size: 0.85rem; color: gray;">✅ 所有圖片與你上傳的檔案名稱對應，請將圖片放在與 index.html 相同的資料夾中。</p>
+    <!-- 課外活動 / 領導力 (深色卡片) -->
+    <div class="section" id="activities">
+        <h2 class="section-title">🤝 課外活動 & 領導經驗</h2>
+        <div class="grid-3">
+            <div class="card-dark">♟️ <strong>西洋棋社社長</strong><br>7~12年級分級教學，帶領社團參與台北市賽事。</div>
+            <div class="card-dark">🌱 <strong>沖繩 SDG 峰會青年大使</strong><br>AI垃圾桶辨識專案，永續設計。</div>
+            <div class="card-dark">🤖 <strong>VEX 機器人團隊</strong><br>機構設計與程式編寫，競賽聯盟。</div>
+            <div class="card-dark">📈 <strong>Econ Nerds 聯合創辦人</strong><br>財經知識推廣、校園投資講座。</div>
+            <div class="card-dark">🏄 <strong>福隆衝浪營 (2024/2025)</strong><br>每週探索海洋永續與極限運動。</div>
+            <div class="card-dark">💻 <strong>電商公益網站 Team Leader</strong><br>販售電子產品，捐贈利潤給慈善機構。</div>
+            <div class="card-dark">⚛️ <strong>物理辯論社成員</strong><br>科學辯證、強化表達能力。</div>
+            <div class="card-dark">🎹 <strong>鋼琴才藝 (業餘)</strong><br>長期興趣，培養專注與紀律。</div>
+        </div>
+    </div>
+
+    <!-- 成績摘要 + 學術亮點 -->
+    <div class="section">
+        <h2 class="section-title">📊 學術歷程 & 關鍵成績</h2>
+        <table>
+            <thead><tr><th>項目</th><th>分數 / 表現</th><th>備註</th></tr></thead>
+            <tbody>
+                <tr><td>GPA (10年級)</td><td>4.32</td><td>校排前段</td></tr>
+                <tr><td>SAT</td><td>1500</td><td>持續挑戰更高分</td></tr>
+                <tr><td>AMC12A</td><td>138分 (傑出)</td><td>AIME晉級 / Honor Roll</td></tr>
+                <tr><td>AP 規劃</td><td>微積分BC、經濟、生物、化學、物理C、APUSH、CS</td><td>多元選修</td></tr>
+                <tr><td>NEC / ARML</td><td>區域晉級 / 個人銅牌</td><td>經濟+數學雙領域</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 未來目標 -->
+    <div class="section" id="goal">
+        <h2 class="section-title">🎯 未來藍圖 & 大學志向</h2>
+        <div class="grid-2">
+            <div class="card-dark">
+                <h3>🎓 主修意向</h3>
+                <p>數學 · 經濟 · 電腦科學 — 朝金融科技、軟體開發或數據科學邁進。</p>
+                <h3 style="margin-top: 1rem;">🌏 留學策略</h3>
+                <p>美國頂尖大學為首選，若另有考量，澳洲優質學府與生活氛圍也是我極度嚮往的選項。</p>
+            </div>
+            <div class="card-dark">
+                <h3>🚀 長期願景</h3>
+                <p>成為「高收入科技人」，同時投入教育平等、環境永續與開源技術社群。持續累積棋藝教學、程式專案與SDGs影響力。</p>
+                <div class="badge-group" style="margin-top: 1rem;">
+                    <span class="badge-dark">💰 財富自由 × 影響力</span>
+                    <span class="badge-dark">🌱 SDGs 實踐者</span>
+                    <span class="badge-dark">♟️ 西洋棋教育推廣</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 夏禾軒 Hsia Ho-Hsuan · 深色系學習歷程檔案 | 完整收錄競賽、社團、國際參與、學術表現 | 無圖片依賴 · 純文字資料展示
+    </footer>
 </div>
 </body>
 </html>
