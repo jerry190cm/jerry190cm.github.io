@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Jerry Hsia | Portfolio</title>
 
 <style>
@@ -13,43 +11,30 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-    scroll-behavior:smooth;
+    font-family:Georgia, serif;
 }
 
 body{
-    background:
-    linear-gradient(rgba(0,0,0,0.35),
-    rgba(0,0,0,0.35)),
-    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-
     color:white;
-    line-height:1.7;
+    overflow-x:hidden;
 }
 
 nav{
     position:fixed;
     top:0;
     width:100%;
+    background:rgba(5,10,25,0.95);
+    padding:18px 50px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    padding:20px 50px;
-
-    background:rgba(0,0,0,0.2);
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
     z-index:1000;
 }
 
-nav h2{
-    color:white;
+.logo{
+    color:#d4af37;
+    font-size:28px;
+    font-weight:bold;
 }
 
 nav ul{
@@ -57,117 +42,148 @@ nav ul{
     list-style:none;
 }
 
-nav ul li{
+nav li{
     margin-left:30px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 nav a:hover{
-    color:#93c5fd;
+    color:#d4af37;
+}
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding:120px 40px 50px;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.active{
+    display:block;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.glass{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    padding:30px;
 }
 
 .hero{
-    height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
     text-align:center;
-    padding:20px;
+    margin-top:80px;
 }
 
 .hero h1{
-    font-size:5rem;
+    font-size:70px;
+    color:#d4af37;
     margin-bottom:15px;
 }
 
-.hero p{
-    font-size:1.4rem;
-    margin:8px 0;
+.hero h2{
+    font-weight:normal;
+    margin-bottom:20px;
 }
 
-section{
-    max-width:1200px;
-    margin:auto;
-    padding:100px 25px;
+.hero p{
+    font-size:20px;
+    line-height:1.8;
 }
 
 .section-title{
-    font-size:2.5rem;
-    margin-bottom:40px;
     text-align:center;
+    color:#d4af37;
+    font-size:50px;
+    margin-bottom:40px;
 }
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
 .card{
-
     background:rgba(255,255,255,0.12);
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,0.2);
-
+    backdrop-filter:blur(10px);
     border-radius:20px;
-
     padding:25px;
-
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
 }
 
 .card h3{
+    color:#d4af37;
     margin-bottom:10px;
-    color:#dbeafe;
 }
 
-.about-card{
-    max-width:900px;
-    margin:auto;
+.activity{
+    height:260px;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    padding:20px;
+    font-size:22px;
+    font-weight:bold;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.activity::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+}
+
+.activity span{
+    position:relative;
+    z-index:2;
 }
 
 footer{
     text-align:center;
-    padding:30px;
-    background:rgba(0,0,0,0.25);
+    padding:20px;
+    background:#050a19;
 }
 
 @media(max-width:768px){
 
     nav{
         flex-direction:column;
-        padding:15px;
     }
 
     nav ul{
-        margin-top:10px;
+        margin-top:15px;
         flex-wrap:wrap;
         justify-content:center;
     }
 
-    nav ul li{
-        margin:10px;
+    nav li{
+        margin:8px 12px;
     }
 
     .hero h1{
-        font-size:3rem;
+        font-size:42px;
     }
 
+    .section-title{
+        font-size:36px;
+    }
 }
 
 </style>
@@ -177,52 +193,68 @@ footer{
 
 <nav>
 
-<h2>Jerry Hsia</h2>
+<div class="logo">
+Jerry Hsia
+</div>
 
 <ul>
-<li><a href="#about">About Me</a></li>
-<li><a href="#scores">Scores</a></li>
-<li><a href="#extracurriculars">Extracurriculars</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a onclick="showPage('about')">About Me</a></li>
+<li><a onclick="showPage('scores')">Scores</a></li>
+<li><a onclick="showPage('activities')">Extracurriculars</a></li>
+<li><a onclick="showPage('contact')">Contact</a></li>
 </ul>
 
 </nav>
 
-<section class="hero">
+<!-- ABOUT -->
+
+<section id="about" class="page active"
+style="
+background-image:
+linear-gradient(rgba(5,10,25,.55),rgba(5,10,25,.55)),
+url('images/beach.jpg');
+">
+
+<div class="container">
+
+<div class="glass hero">
 
 <h1>Jerry Hsia</h1>
 
-<p>Aspiring Mathematics Major</p>
-
-<p>Chess Player • Investor • Robotics Competitor</p>
-
-</section>
-
-<section id="about">
-
-<h2 class="section-title">About Me</h2>
-
-<div class="card about-card">
+<h2>Wego High School • Junior</h2>
 
 <p>
-
-Hello! My name is Jerry Hsia.
-
-I am currently a junior at Wego High School and hope to major in Mathematics in college.
-
-My interests include mathematics, economics, finance, technology, and strategic thinking. I enjoy solving challenging problems, competing in chess tournaments, researching financial markets, and participating in robotics competitions.
-
-Through academic competitions, international conferences, and leadership experiences, I strive to continuously improve my analytical thinking, communication skills, and global perspective.
-
+Aspiring Mathematics Major with strong interests in
+mathematics, economics, finance, robotics, and strategic thinking.
 </p>
+
+<br>
+
+<p>
+I enjoy chess, investing, robotics competitions,
+and solving challenging mathematical problems.
+</p>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="scores">
+<!-- SCORES -->
 
-<h2 class="section-title">Academic Scores</h2>
+<section id="scores" class="page"
+style="
+background-image:
+linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),
+url('images/academic.jpg');
+">
+
+<div class="container">
+
+<h1 class="section-title">
+Academic Scores
+</h1>
 
 <div class="grid">
 
@@ -248,92 +280,112 @@ Through academic competitions, international conferences, and leadership experie
 
 </div>
 
+</div>
+
 </section>
 
-<section id="extracurriculars">
+<!-- ACTIVITIES -->
 
-<h2 class="section-title">Extracurricular Activities</h2>
+<section id="activities" class="page"
+style="
+background-image:
+linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),
+url('images/activities.jpg');
+">
+
+<div class="container">
+
+<h1 class="section-title">
+Extracurricular Activities
+</h1>
 
 <div class="grid">
 
-<div class="card">
-<h3>VEX Robotics</h3>
-<p>
-Designed, programmed, and competed in robotics competitions while developing engineering, teamwork, and problem-solving skills.
-</p>
+<div class="activity" style="background-image:url('images/vex.jpg');">
+<span>VEX Robotics</span>
 </div>
 
-<div class="card">
-<h3>Chess</h3>
-<p>
-Competitive chess player focused on strategic thinking, decision making, and analytical reasoning.
-</p>
+<div class="activity" style="background-image:url('images/chess.jpg');">
+<span>Chess</span>
 </div>
 
-<div class="card">
-<h3>Wharton Global High School Investment Competition</h3>
-<p>
-Conducted stock research, portfolio construction, and investment presentations as part of an international finance competition.
-</p>
+<div class="activity" style="background-image:url('images/wharton.jpg');">
+<span>Wharton Investment Competition</span>
 </div>
 
-<div class="card">
-<h3>Okinawa SDGs Conference</h3>
-<p>
-Collaborated with students from different countries to discuss sustainability, leadership, and global development.
-</p>
+<div class="activity" style="background-image:url('images/okinawa.jpg');">
+<span>Okinawa SDGs Conference</span>
 </div>
 
-<div class="card">
-<h3>CTCA International Chess Open</h3>
-<p>
-Competed against international players and strengthened competitive chess experience.
-</p>
+<div class="activity" style="background-image:url('images/ctca.jpg');">
+<span>CTCA International Chess Open</span>
 </div>
 
-<div class="card">
-<h3>University of Chicago Summer Program</h3>
-<p>
-Participated in advanced academic coursework and collaborative learning experiences.
-</p>
+<div class="activity" style="background-image:url('images/uchicago.jpg');">
+<span>University of Chicago Summer Program</span>
 </div>
 
-<div class="card">
-<h3>Physics Debate Club</h3>
-<p>
-Discussed scientific topics and developed critical thinking, communication, and debate skills.
-</p>
+<div class="activity" style="background-image:url('images/physics.jpg');">
+<span>Physics Debate Club</span>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
 
-<h2 class="section-title">Contact</h2>
+<section id="contact" class="page"
+style="
+background-image:
+linear-gradient(rgba(5,10,25,.60),rgba(5,10,25,.60)),
+url('images/ocean.jpg');
+">
 
-<div class="card about-card">
+<div class="container">
 
-<p>Email: your_email@example.com</p>
+<h1 class="section-title">
+Contact
+</h1>
 
-<br>
+<div class="glass">
 
-<p>GitHub: github.com/yourusername</p>
+<h2>Email</h2>
 
-<br>
+<p style="font-size:24px;">
+hsiahohsuan@gmail.com
+</p>
 
-<p>LinkedIn: linkedin.com/in/yourprofile</p>
+</div>
 
 </div>
 
 </section>
 
 <footer>
-
-<p>© 2026 Jerry Hsia. All Rights Reserved.</p>
-
+© 2026 Jerry Hsia
 </footer>
+
+<script>
+
+function showPage(pageId){
+
+document.querySelectorAll('.page').forEach(page=>{
+page.classList.remove('active');
+});
+
+document.getElementById(pageId).classList.add('active');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+</script>
 
 </body>
 </html>
