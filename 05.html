@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry Hsia</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            line-height:1.6;
+        }
+
+        header{
+            height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            background:linear-gradient(135deg,#2563eb,#7c3aed);
+        }
+
+        header h1{
+            font-size:4rem;
+        }
+
+        header p{
+            font-size:1.4rem;
+            margin-top:10px;
+        }
+
+        .btn{
+            margin-top:25px;
+            padding:12px 24px;
+            background:white;
+            color:black;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
+        }
+
+        section{
+            max-width:1000px;
+            margin:auto;
+            padding:80px 20px;
+        }
+
+        h2{
+            margin-bottom:20px;
+            color:#60a5fa;
+        }
+
+        .card-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:20px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        footer{
+            text-align:center;
+            padding:30px;
+            background:#020617;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jerry Hsia</h1>
+    <p>Student | Investor | Future Entrepreneur</p>
+    <a href="#about" class="btn">Learn More</a>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <p>
+        Hi! I'm Jerry, a high school student passionate about
+        investing, economics, mathematics, technology, and business.
+        I enjoy analyzing markets, building projects, and competing
+        in academic competitions.
+    </p>
+</section>
+
+<section>
+    <h2>Achievements</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Academics</h3>
+            <p>
+                SAT, AP Courses, Mathematics Competitions,
+                and Research Projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Investing</h3>
+            <p>
+                Portfolio management, stock market research,
+                and economic analysis.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Leadership</h3>
+            <p>
+                Team projects, competitions, and entrepreneurship.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Projects</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Investment Research</h3>
+            <p>
+                Analysis of AI, clean energy, and biotech companies.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Market Reports</h3>
+            <p>
+                Fundamental and macroeconomic research reports.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Programming</h3>
+            <p>
+                Web development and software projects.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Contact</h2>
+
+    <p>Email: your@email.com</p>
+    <p>GitHub: github.com/yourusername</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+</section>
+
+<footer>
+    <p>© 2026 Jerry Hsia. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
