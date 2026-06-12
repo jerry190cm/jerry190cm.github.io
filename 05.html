@@ -84,7 +84,7 @@ nav a:hover{
     padding:30px;
 }
 
-/* ABOUT FLEX */
+/* ABOUT */
 .about-flex{
     display:flex;
     gap:40px;
@@ -100,7 +100,6 @@ nav a:hover{
     border:2px solid rgba(212,175,55,0.5);
 }
 
-/* HERO */
 .hero{
     text-align:left;
     flex:1;
@@ -122,6 +121,7 @@ nav a:hover{
     line-height:1.8;
 }
 
+/* TITLE */
 .section-title{
     text-align:center;
     color:#d4af37;
@@ -129,12 +129,14 @@ nav a:hover{
     margin-bottom:40px;
 }
 
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
+/* CARD */
 .card{
     background:rgba(255,255,255,0.10);
     backdrop-filter:blur(10px);
@@ -147,6 +149,7 @@ nav a:hover{
     margin-bottom:10px;
 }
 
+/* ACTIVITY */
 .activity{
     height:260px;
     border-radius:20px;
@@ -181,12 +184,14 @@ nav a:hover{
     opacity:0.9;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
     background:#050a19;
 }
 
+/* MOBILE */
 @media(max-width:768px){
 
     nav{
@@ -222,6 +227,7 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="logo">Jerry Hsia</div>
 
@@ -229,7 +235,7 @@ footer{
 <li><a onclick="showPage('about')">About Me</a></li>
 <li><a onclick="showPage('scores')">Scores</a></li>
 <li><a onclick="showPage('activities')">Extracurriculars</a></li>
-<li><a onclick="showPage('contact')">Contact</a></li>
+<li><a onclick="showPage('essay')">Essay</a></li>
 </ul>
 </nav>
 
@@ -249,14 +255,11 @@ style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url
 <h2>Wego High School • Junior</h2>
 
 <p>
-Aspiring Mathematics Major with strong interests in mathematics, economics, finance, robotics, and strategic thinking.
+Aspiring Mathematics Major with interests in mathematics, economics, finance, robotics, and strategic thinking.
 </p>
 
-<br>
-
 <p>
-I enjoy chess, investing, robotics competitions,
-and solving challenging mathematical problems.
+I enjoy chess, investing, robotics competitions, and solving challenging mathematical problems.
 </p>
 
 </div>
@@ -279,16 +282,13 @@ style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url
 <div class="card">
 <h3>GPA</h3>
 <p>4.37</p>
-<p style="margin-top:10px; font-size:14px;">
-Weighted GPA reflecting advanced coursework and consistent academic performance.
-</p>
 </div>
 
 <div class="card">
 <h3>SAT</h3>
 <p>1500</p>
 <p style="margin-top:10px; font-size:14px;">
-Standardized test for college admissions in the U.S., measuring reading, writing, and math reasoning.
+Standardized U.S. college entrance exam measuring reading, writing, and math reasoning.
 </p>
 </div>
 
@@ -296,16 +296,13 @@ Standardized test for college admissions in the U.S., measuring reading, writing
 <h3>TOEFL</h3>
 <p>110</p>
 <p style="margin-top:10px; font-size:14px;">
-English proficiency test measuring academic reading, listening, speaking, and writing skills.
+English proficiency test covering academic reading, listening, speaking, and writing.
 </p>
 </div>
 
 <div class="card">
 <h3>School Average</h3>
 <p>90%</p>
-<p style="margin-top:10px; font-size:14px;">
-Overall school performance across all subjects.
-</p>
 </div>
 
 </div>
@@ -325,43 +322,43 @@ style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url
 
 <div class="activity" style="background-image:url('images/vex.jpg');">
 <span>VEX Robotics
-<small>In a robotics league, our team built a robot that scored points in matches and competed to win using strategy and engineering design.</small>
+<small>Built a competition robot that scored points in matches and focused on strategy and engineering design.</small>
 </span>
 </div>
 
 <div class="activity" style="background-image:url('images/chess.jpg');">
 <span>Chess
-<small>Competitive chess player developing strategic thinking and participating in tournaments.</small>
+<small>Competitive chess player developing strategic thinking through tournaments.</small>
 </span>
 </div>
 
 <div class="activity" style="background-image:url('images/wharton.jpg');">
 <span>Wharton Investment Competition
-<small>Managed a $500K paper portfolio in a U Penn investment competition focused on client goals and long-term growth.</small>
+<small>Managed $500K virtual portfolio focusing on long-term investment strategy.</small>
 </span>
 </div>
 
 <div class="activity" style="background-image:url('images/okinawa.jpg');">
 <span>Okinawa SDGs Conference
-<small>At a Japan eco-conference, designed an AI trashcan that sorts waste by category using quantitative methods.</small>
+<small>Designed AI trash-sorting system using quantitative classification methods.</small>
 </span>
 </div>
 
 <div class="activity" style="background-image:url('images/ctca.jpg');">
 <span>CTCA International Chess Open
-<small>Won 9000 NTD in U15 category in a 9-round Swiss chess tournament in Taiwan.</small>
+<small>Won 9000 NTD in U15 category in a 9-round Swiss tournament.</small>
 </span>
 </div>
 
 <div class="activity" style="background-image:url('images/uchicago.jpg');">
 <span>University of Chicago Summer Program
-<small>Selected for a 3-week data science program (40 hrs/week) covering statistics, ethics, and research methods.</small>
+<small>3-week data science program (40 hrs/week) covering statistics, ethics, and research.</small>
 </span>
 </div>
 
 <div class="activity" style="background-image:url('images/physics.jpg');">
 <span>Physics Debate Club
-<small>Debated physics topics such as quantum mechanics and presented research-based arguments.</small>
+<small>Debated quantum mechanics and presented physics research arguments.</small>
 </span>
 </div>
 
@@ -370,23 +367,39 @@ style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="page"
+<!-- ESSAY -->
+<section id="essay" class="page"
 style="background-image:linear-gradient(rgba(5,10,25,.60),rgba(5,10,25,.60)),url('images/ocean.jpg');">
 
 <div class="container">
 
-<h1 class="section-title">Contact</h1>
+<h1 class="section-title">Essays</h1>
 
-<div class="glass">
+<div class="grid">
 
-<h2>Email</h2>
-<p style="font-size:24px;">hsiahohsuan@gmail.com</p>
+<div class="card">
+<h3>Why Major Essay</h3>
+<a href="images/why_major.pdf" target="_blank" style="color:#d4af37;">View PDF</a>
+</div>
 
+<div class="card">
+<h3>Diversity Essay</h3>
+<a href="images/diversity.pdf" target="_blank" style="color:#d4af37;">View PDF</a>
+</div>
+
+<div class="card">
+<h3>Why School Essay</h3>
+<a href="images/why_school.pdf" target="_blank" style="color:#d4af37;">View PDF</a>
+</div>
+
+<div class="card">
+<h3>Personal Statement</h3>
+<a href="images/personal_statement.pdf" target="_blank" style="color:#d4af37;">View PDF</a>
 </div>
 
 </div>
 
+</div>
 </section>
 
 <footer>
@@ -394,14 +407,15 @@ style="background-image:linear-gradient(rgba(5,10,25,.60),rgba(5,10,25,.60)),url
 </footer>
 
 <script>
+
 function showPage(pageId){
-document.querySelectorAll('.page').forEach(page=>{
-page.classList.remove('active');
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
 });
 document.getElementById(pageId).classList.add('active');
-
 window.scrollTo({top:0, behavior:'smooth'});
 }
+
 </script>
 
 </body>
