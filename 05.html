@@ -17,13 +17,14 @@
 body{
     color:white;
     overflow-x:hidden;
+    background:#050a19;
 }
 
 nav{
     position:fixed;
     top:0;
     width:100%;
-    background:rgba(5,10,25,0.95);
+    background:rgba(5,10,25,0.98);
     padding:18px 50px;
     display:flex;
     justify-content:space-between;
@@ -76,16 +77,33 @@ nav a:hover{
 }
 
 .glass{
-    background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.10);
     backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.18);
     border-radius:20px;
     padding:30px;
 }
 
+/* ABOUT FLEX */
+.about-flex{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.about-img{
+    width:260px;
+    height:260px;
+    border-radius:20px;
+    object-fit:cover;
+    border:2px solid rgba(212,175,55,0.5);
+}
+
+/* HERO */
 .hero{
-    text-align:center;
-    margin-top:80px;
+    text-align:left;
+    flex:1;
 }
 
 .hero h1{
@@ -118,7 +136,7 @@ nav a:hover{
 }
 
 .card{
-    background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.10);
     backdrop-filter:blur(10px);
     border-radius:20px;
     padding:25px;
@@ -136,7 +154,7 @@ nav a:hover{
     display:flex;
     align-items:flex-end;
     padding:20px;
-    font-size:22px;
+    font-size:18px;
     font-weight:bold;
     background-size:cover;
     background-position:center;
@@ -147,12 +165,20 @@ nav a:hover{
     content:'';
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.55);
 }
 
 .activity span{
     position:relative;
     z-index:2;
+}
+
+.activity small{
+    display:block;
+    font-size:13px;
+    font-weight:normal;
+    margin-top:6px;
+    opacity:0.9;
 }
 
 footer{
@@ -184,6 +210,11 @@ footer{
     .section-title{
         font-size:36px;
     }
+
+    .about-flex{
+        flex-direction:column;
+        text-align:center;
+    }
 }
 
 </style>
@@ -192,10 +223,7 @@ footer{
 <body>
 
 <nav>
-
-<div class="logo">
-Jerry Hsia
-</div>
+<div class="logo">Jerry Hsia</div>
 
 <ul>
 <li><a onclick="showPage('about')">About Me</a></li>
@@ -203,29 +231,25 @@ Jerry Hsia
 <li><a onclick="showPage('activities')">Extracurriculars</a></li>
 <li><a onclick="showPage('contact')">Contact</a></li>
 </ul>
-
 </nav>
 
 <!-- ABOUT -->
-
 <section id="about" class="page active"
-style="
-background-image:
-linear-gradient(rgba(5,10,25,.55),rgba(5,10,25,.55)),
-url('images/beach.jpg');
-">
+style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url('images/beach.jpg');">
 
 <div class="container">
 
-<div class="glass hero">
+<div class="glass about-flex">
+
+<img class="about-img" src="images/profile.jpg" alt="profile">
+
+<div class="hero">
 
 <h1>Jerry Hsia</h1>
-
 <h2>Wego High School • Junior</h2>
 
 <p>
-Aspiring Mathematics Major with strong interests in
-mathematics, economics, finance, robotics, and strategic thinking.
+Aspiring Mathematics Major with strong interests in mathematics, economics, finance, robotics, and strategic thinking.
 </p>
 
 <br>
@@ -239,124 +263,125 @@ and solving challenging mathematical problems.
 
 </div>
 
+</div>
 </section>
 
 <!-- SCORES -->
-
 <section id="scores" class="page"
-style="
-background-image:
-linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),
-url('images/academic.jpg');
-">
+style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url('images/academic.jpg');">
 
 <div class="container">
 
-<h1 class="section-title">
-Academic Scores
-</h1>
+<h1 class="section-title">Academic Scores</h1>
 
 <div class="grid">
 
 <div class="card">
 <h3>GPA</h3>
 <p>4.37</p>
-</div>
-
-<div class="card">
-<h3>School Average</h3>
-<p>90%</p>
+<p style="margin-top:10px; font-size:14px;">
+Weighted GPA reflecting advanced coursework and consistent academic performance.
+</p>
 </div>
 
 <div class="card">
 <h3>SAT</h3>
 <p>1500</p>
+<p style="margin-top:10px; font-size:14px;">
+Standardized test for college admissions in the U.S., measuring reading, writing, and math reasoning.
+</p>
 </div>
 
 <div class="card">
 <h3>TOEFL</h3>
 <p>110</p>
+<p style="margin-top:10px; font-size:14px;">
+English proficiency test measuring academic reading, listening, speaking, and writing skills.
+</p>
+</div>
+
+<div class="card">
+<h3>School Average</h3>
+<p>90%</p>
+<p style="margin-top:10px; font-size:14px;">
+Overall school performance across all subjects.
+</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
 <!-- ACTIVITIES -->
-
 <section id="activities" class="page"
-style="
-background-image:
-linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),
-url('images/activities.jpg');
-">
+style="background-image:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.65)),url('images/activities.jpg');">
 
 <div class="container">
 
-<h1 class="section-title">
-Extracurricular Activities
-</h1>
+<h1 class="section-title">Extracurricular Activities</h1>
 
 <div class="grid">
 
 <div class="activity" style="background-image:url('images/vex.jpg');">
-<span>VEX Robotics</span>
+<span>VEX Robotics
+<small>In a robotics league, our team built a robot that scored points in matches and competed to win using strategy and engineering design.</small>
+</span>
 </div>
 
 <div class="activity" style="background-image:url('images/chess.jpg');">
-<span>Chess</span>
+<span>Chess
+<small>Competitive chess player developing strategic thinking and participating in tournaments.</small>
+</span>
 </div>
 
 <div class="activity" style="background-image:url('images/wharton.jpg');">
-<span>Wharton Investment Competition</span>
+<span>Wharton Investment Competition
+<small>Managed a $500K paper portfolio in a U Penn investment competition focused on client goals and long-term growth.</small>
+</span>
 </div>
 
 <div class="activity" style="background-image:url('images/okinawa.jpg');">
-<span>Okinawa SDGs Conference</span>
+<span>Okinawa SDGs Conference
+<small>At a Japan eco-conference, designed an AI trashcan that sorts waste by category using quantitative methods.</small>
+</span>
 </div>
 
 <div class="activity" style="background-image:url('images/ctca.jpg');">
-<span>CTCA International Chess Open</span>
+<span>CTCA International Chess Open
+<small>Won 9000 NTD in U15 category in a 9-round Swiss chess tournament in Taiwan.</small>
+</span>
 </div>
 
 <div class="activity" style="background-image:url('images/uchicago.jpg');">
-<span>University of Chicago Summer Program</span>
+<span>University of Chicago Summer Program
+<small>Selected for a 3-week data science program (40 hrs/week) covering statistics, ethics, and research methods.</small>
+</span>
 </div>
 
 <div class="activity" style="background-image:url('images/physics.jpg');">
-<span>Physics Debate Club</span>
+<span>Physics Debate Club
+<small>Debated physics topics such as quantum mechanics and presented research-based arguments.</small>
+</span>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact" class="page"
-style="
-background-image:
-linear-gradient(rgba(5,10,25,.60),rgba(5,10,25,.60)),
-url('images/ocean.jpg');
-">
+style="background-image:linear-gradient(rgba(5,10,25,.60),rgba(5,10,25,.60)),url('images/ocean.jpg');">
 
 <div class="container">
 
-<h1 class="section-title">
-Contact
-</h1>
+<h1 class="section-title">Contact</h1>
 
 <div class="glass">
 
 <h2>Email</h2>
-
-<p style="font-size:24px;">
-hsiahohsuan@gmail.com
-</p>
+<p style="font-size:24px;">hsiahohsuan@gmail.com</p>
 
 </div>
 
@@ -369,22 +394,14 @@ hsiahohsuan@gmail.com
 </footer>
 
 <script>
-
 function showPage(pageId){
-
 document.querySelectorAll('.page').forEach(page=>{
 page.classList.remove('active');
 });
-
 document.getElementById(pageId).classList.add('active');
 
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
-
+window.scrollTo({top:0, behavior:'smooth'});
 }
-
 </script>
 
 </body>
