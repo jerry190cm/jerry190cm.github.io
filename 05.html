@@ -1,171 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerry Hsia</title>
+    <title>Jerry Hsia | Portfolio</title>
 
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        body{
-            background:#0f172a;
-            color:white;
-            line-height:1.6;
+        body {
+            background: #0a0f1c;
+            color: white;
+            line-height: 1.6;
         }
 
-        header{
-            height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            background:linear-gradient(135deg,#2563eb,#7c3aed);
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(10,15,28,0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
         }
 
-        header h1{
-            font-size:4rem;
+        nav h2 {
+            color: #60a5fa;
         }
 
-        header p{
-            font-size:1.4rem;
-            margin-top:10px;
+        nav ul {
+            display: flex;
+            list-style: none;
         }
 
-        .btn{
-            margin-top:25px;
-            padding:12px 24px;
-            background:white;
-            color:black;
-            text-decoration:none;
-            border-radius:10px;
-            font-weight:bold;
+        nav ul li {
+            margin-left: 30px;
         }
 
-        section{
-            max-width:1000px;
-            margin:auto;
-            padding:80px 20px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        h2{
-            margin-bottom:20px;
-            color:#60a5fa;
+        nav a:hover {
+            color: #60a5fa;
         }
 
-        .card-container{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+                linear-gradient(135deg,#2563eb,#7c3aed);
+            text-align: center;
         }
 
-        .card{
-            background:#1e293b;
-            padding:20px;
-            border-radius:15px;
-            transition:0.3s;
+        .hero h1 {
+            font-size: 5rem;
         }
 
-        .card:hover{
-            transform:translateY(-5px);
+        .hero p {
+            font-size: 1.4rem;
+            margin-top: 15px;
         }
 
-        footer{
-            text-align:center;
-            padding:30px;
-            background:#020617;
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+
+        h2.section-title {
+            color: #60a5fa;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #141c2f;
+            padding: 25px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #93c5fd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #05070f;
         }
     </style>
 </head>
+
 <body>
 
-<header>
+<nav>
+    <h2>Jerry Hsia</h2>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#extracurriculars">Extracurriculars</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
     <h1>Jerry Hsia</h1>
-    <p>Student | Investor | Future Entrepreneur</p>
-    <a href="#about" class="btn">Learn More</a>
-</header>
+    <p>Student • Investor • Researcher • Future Entrepreneur</p>
+</section>
 
 <section id="about">
-    <h2>About Me</h2>
+    <h2 class="section-title">About Me</h2>
 
     <p>
-        Hi! I'm Jerry, a high school student passionate about
-        investing, economics, mathematics, technology, and business.
-        I enjoy analyzing markets, building projects, and competing
-        in academic competitions.
+        I am a high school student with strong interests in finance,
+        economics, technology, mathematics, and entrepreneurship.
+        My goal is to apply analytical thinking and leadership skills
+        to solve real-world problems and create meaningful impact.
     </p>
 </section>
 
-<section>
-    <h2>Achievements</h2>
+<section id="extracurriculars">
+    <h2 class="section-title">Extracurricular Activities</h2>
 
-    <div class="card-container">
+    <div class="grid">
 
         <div class="card">
-            <h3>Academics</h3>
+            <h3>VEX Robotics</h3>
             <p>
-                SAT, AP Courses, Mathematics Competitions,
-                and Research Projects.
+                Participated in competitive robotics competitions involving
+                engineering design, programming, teamwork, and strategic problem solving.
             </p>
         </div>
 
         <div class="card">
-            <h3>Investing</h3>
+            <h3>Chess</h3>
             <p>
-                Portfolio management, stock market research,
-                and economic analysis.
+                Competitive chess player focused on analytical thinking,
+                strategic planning, and decision making under pressure.
             </p>
         </div>
 
         <div class="card">
-            <h3>Leadership</h3>
+            <h3>Wharton Global High School Investment Competition</h3>
             <p>
-                Team projects, competitions, and entrepreneurship.
+                Collaborated with a team to construct investment strategies,
+                conduct equity research, and present portfolio recommendations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Okinawa SDGs Conference</h3>
+            <p>
+                Engaged in international discussions on sustainability,
+                leadership, and global development challenges.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>CTCA International Chess Open</h3>
+            <p>
+                Competed against international players in a high-level chess tournament.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>University of Chicago Summer Program</h3>
+            <p>
+                Participated in advanced academic coursework and collaborative learning experiences.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Physics Debate Club</h3>
+            <p>
+                Explored modern physics topics and developed critical thinking,
+                scientific communication, and argumentation skills.
             </p>
         </div>
 
     </div>
 </section>
 
-<section>
-    <h2>Projects</h2>
+<section id="projects">
+    <h2 class="section-title">Projects & Interests</h2>
 
-    <div class="card-container">
+    <div class="grid">
 
         <div class="card">
             <h3>Investment Research</h3>
             <p>
-                Analysis of AI, clean energy, and biotech companies.
+                Researching AI, semiconductor, biotechnology, and clean energy companies.
             </p>
         </div>
 
         <div class="card">
-            <h3>Market Reports</h3>
+            <h3>Market Analysis</h3>
             <p>
-                Fundamental and macroeconomic research reports.
+                Tracking macroeconomic trends, interest rates, inflation,
+                and financial markets.
             </p>
         </div>
 
         <div class="card">
-            <h3>Programming</h3>
+            <h3>Web Development</h3>
             <p>
-                Web development and software projects.
+                Building websites and digital projects using modern technologies.
             </p>
         </div>
 
     </div>
 </section>
 
-<section>
-    <h2>Contact</h2>
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
 
-    <p>Email: your@email.com</p>
+    <p>Email: your_email@example.com</p>
     <p>GitHub: github.com/yourusername</p>
     <p>LinkedIn: linkedin.com/in/yourprofile</p>
 </section>
